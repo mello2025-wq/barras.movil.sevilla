@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barras Móvil | Carlos Sevilla</title>
+    <meta name="description" content="Servicio de Coctelería y Barra Móvil en David, Chiriquí. Bodas, Fiestas Privadas y Eventos Corporativos." />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config for Custom Fonts and Colors -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif'],
+              serif: ['"Playfair Display"', 'serif'],
+              script: ['"Great Vibes"', 'cursive'],
+            },
+            colors: {
+              brand: {
+                gold: '#C5A059',      /* Classic Gold */
+                dark: '#0a0a0a',      /* Deep Black */
+                leather: '#8D6E63',   /* Apron Brown */
+                red: '#D32F2F',       /* Cocktail Red */
+                orange: '#F57C00',    /* Cocktail Orange */
+                yellow: '#FBC02D',    /* Cocktail Yellow */
+                charcoal: '#1A1A1A'   /* Dark Grey */
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px; /* Fix for sticky header overlap */
+      }
+      body {
+        background-color: #0a0a0a;
+        color: #e5e5e5;
+      }
+      /* Elegant gold gradient text */
+      .gold-text {
+         background: linear-gradient(to bottom right, #F5D76E, #C5A059, #B8860B);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+      }
+      /* Mimic the logo style */
+      .logo-shadow {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
