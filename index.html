@@ -73,6 +73,7 @@
 {
   "imports": {
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.1/client",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
     "react/": "https://aistudiocdn.com/react@^19.2.1/",
@@ -80,8 +81,16 @@
   }
 }
 </script>
+<!-- Babel for JSX transformation -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- Process Polyfill for Environment Variables -->
+<script>
+  window.process = window.process || { env: {} };
+</script>
 </head>
   <body>
     <div id="root"></div>
+    <script type="text/babel" data-presets="react,typescript" src="./index.tsx"></script>
   </body>
 </html>

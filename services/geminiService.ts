@@ -4,8 +4,13 @@ import { CocktailRecipe } from "../types";
 // Safety check for process.env
 const getApiKey = () => {
   try {
-    return process.env.API_KEY || '';
+    // Check if process exists (for Node/Build envs) and has the key
+    if (typeof process !== 'undefined' && process.env && process.env.API_KEY) {
+      return process.env.API_KEY;
+    }
+    return '';
   } catch (e) {
+    console.warn("Error accessing environment variable:", e);
     return '';
   }
 };
@@ -36,7 +41,7 @@ export const generateCocktailIdea = async (mood: string): Promise<CocktailRecipe
     console.warn("No API Key provided for Gemini");
     return {
       name: "Blue Lagoon (Demo)",
-      description: "API Key missing - showing demo data. A refreshing blue tropical drink.",
+      description: "API Key missing or invalid. Please configure the API_KEY environment variable in Netlify.",
       ingredients: ["1 oz Vodka", "1 oz Blue Curacao", "Lemonade", "Ice", "Cherry for garnish"],
       instructions: "Mix vodka and blue curacao over ice. Top with lemonade. Garnish with a cherry.",
       funFact: "This is a fallback recipe because the AI isn't connected yet!"
